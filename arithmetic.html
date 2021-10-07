@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>
-        Arithmetic Page
+        This is Arithmetic Page
     </title>
 </head> 
 
@@ -15,8 +15,8 @@
     <label for="baseNum">Enter a base </label>
     <input type ="number" id="baseNum" name="baseNum" value=10> <br>
 
-    <label for="form1_nick">Enter an exponent </label>
-    <input type ="number" id="exponentNum" name="exponentNum"> <br>
+    <label for="exponent">Enter an exponent </label>
+    <input type ="number" id="exponentNum" name="exponentNum" > <br>
 
     <button type="button" onclick="powers()"> Compute </button> <br>
 </form>
@@ -25,21 +25,21 @@
 <p id="result">This text will be replaced </p>
 <br>
 <form>
-    <input type="radio" id="rd1_plus" name="radio" value="plus" onClick="processRadio()" >
+    <input type="radio" id="plus" name="radio" value="plus" onClick="processRadio()" >
     <label for="rd1_plus"> + </label></br>
     <br>
-    <input type="radio" id="rd1_minus" name="radio" value="minus" onClick="processRadio()">
+    <input type="radio" id="minus" name="radio" value="minus" onClick="processRadio()">
     <label for="rd1_minus"> - </label></br>
     <br>
-    <input type="radio" id="rd1_times" name="radio" value="times" onClick="processRadio()">
+    <input type="radio" id="times" name="radio" value="times" onClick="processRadio()">
     <label for="rd1_times"> * </label></br>
     <br>
-    <input type="radio" id="rd1_divide" name="radio" value="divide" onClick="processRadio()">
+    <input type="radio" id="divide" name="radio" value="divide" onClick="processRadio()">
     <label for="rd1_divide"> / </label></br>
     <br>
 </form>
 
-<p id="resultRadio">The result will be displayed here </p>
+<p id="result1">The result will be displayed here </p>
 
 <script> 
 
@@ -57,37 +57,37 @@
         }
         function processRadio()
         {
-            let value1 = document.getElementById("baseNum").value
-            let value2 = document.getElementById("exponentNum").value
-            if (document.getElementById("rd1_plus").checked)
+            let val1 = document.getElementById("baseNum").value
+            let val2 = document.getElementById("exponentNum").value
+            if (document.getElementById("plus").checked)
             {
-                const sum = parseInt(value1) + parseInt(value2);
-                document.getElementById("resultRadio").innerHTML = " The sum of " + value1 + " and " + value2 + " is : " + sum;
-                document.getElementById("rd1_minus").checked = false;
-                document.getElementById("rd1_times").checked = false;
-                document.getElementById("rd1_divide").checked = false
+                const sum = parseInt(val1) + parseInt(val2);
+                document.getElementById("result1").innerHTML = " The sum of " + val1 + " and " + val2 + " is : " + sum;
+                document.getElementById("minus").checked = false;
+                document.getElementById("times").checked = false;
+                document.getElementById("divide").checked = false
             } 
-            else if (document.getElementById("rd1_minus").checked)
+            else if (document.getElementById("minus").checked)
             {
-                const sub = parseInt(value1) - parseInt(value2);
-                document.getElementById("resultRadio").innerHTML = " The subraction of " + value1 + " and " + value2 + " is : " + sub;
-                document.getElementById("rd1_plus").checked = false;
-                document.getElementById("rd1_times").checked = false;
-                document.getElementById("rd1_divide").checked = false;
+                const sub = parseInt(val1) - parseInt(val2);
+                document.getElementById("result1").innerHTML = " The subraction of " + val1 + " and " + val2 + " is : " + sub;
+                document.getElementById("plus").checked = false;
+                document.getElementById("times").checked = false;
+                document.getElementById("divide").checked = false;
             } 
-            else if (document.getElementById("rd1_times").checked) 
+            else if (document.getElementById("times").checked) 
             {
-                document.getElementById("resultRadio").innerHTML = " The multiplication of " + value1 + " and " + value2 + " is : " + value1 * value2;
-                document.getElementById("rd1_plus").checked = false;
-                document.getElementById("rd1_minus").checked = false;
-                document.getElementById("rd1_divide").checked = false;
+                document.getElementById("result1").innerHTML = " The multiplication of " + val1 + " and " + val2 + " is : " + val1 * val2;
+                document.getElementById("plus").checked = false;
+                document.getElementById("minus").checked = false;
+                document.getElementById("divide").checked = false;
             } 
-            else if (document.getElementById("rd1_divide").checked) 
+            else if (document.getElementById("divide").checked) 
             {
-                document.getElementById("resultRadio").innerHTML = " The division of " + value1 + " and " + value2 + " is : " + value1 / value2;
-                document.getElementById("rd1_plus").checked = false;
-                document.getElementById("rd1_minus").checked = false;
-                document.getElementById("rd1_times").checked = false;
+                document.getElementById("result1").innerHTML = " The division of " + val1 + " and " + val2 + " is : " + val1 / val2;
+                document.getElementById("plus").checked = false;
+                document.getElementById("minus").checked = false;
+                document.getElementById("times").checked = false;
             }
         }
 </script>
